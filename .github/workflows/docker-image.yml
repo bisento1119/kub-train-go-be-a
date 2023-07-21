@@ -23,4 +23,4 @@ jobs:
         docker buildx build . 
         --file Dockerfile
         --build-arg PROJECT_VERSION="$PROJECT_VERSION"
-        --tag miguno/golang-docker-build-tutorial:$(date +%s)
+        --tag bisento1119/kub-train-go-be-a:$(date +%s)
