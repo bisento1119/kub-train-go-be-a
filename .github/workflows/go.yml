@@ -23,3 +23,12 @@ jobs:
 
       - name: list all
         run: ls
+
+      - name: Build the Docker image
+        run: >
+          docker buildx build . 
+          --file Dockerfile
+          --build-arg PROJECT_VERSION="$PROJECT_VERSION"
+          --tag bisento1119/kub-train-go-be-a:$(date +%s)
+
+          
