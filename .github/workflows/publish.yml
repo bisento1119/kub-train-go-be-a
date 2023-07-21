@@ -71,7 +71,7 @@ jobs:
     - run: cat body.log
 
     #  create Github release with release note from file and binary asset attached
-    - uses: bisento1119/kub-train-go-be-a
+    - uses: bisento1119/kub-train-go-be-a@v0.0.1
       with:
         name: ${{ env.GITHUB_REF_NAME }}
         tag: ${{ env.GITHUB_REF_NAME }}
