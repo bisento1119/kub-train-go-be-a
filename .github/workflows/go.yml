@@ -1,45 +1,22 @@
-# This workflow will build a golang project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+name: Go package
 
-name: Go
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push]
 
 jobs:
-
   build:
+
     runs-on: ubuntu-latest
-    env:
-      PROJECT_VERSION: 1.0.0-alpha
     steps:
-    - uses: actions/checkout@v3
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Set up Go
-      uses: actions/setup-go@v3
-      with:
-        go-version: 1.20
+      - uses: actions/checkout@v3
 
-    # Go environment
-    - name: setup Go Lang
-      uses: actions/setup-go@v3
-      with:
-        go-version: '^1.20.3'
-        # go version
-    - run: |
-        go get -u -v -f all
-        go build -ldflags "-X main.Version=${GITHUB_REF_NAME} -X main.BuiltBy=github-actions" main.go
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'
 
-    - run: git version
-    - run: git branch
-    - run: git tag
-
-#    - name: Build
-#      run: |
-#        go get -d ./...
-#        go build -ldflags "-X main.Version=${GITHUB_REF_NAME} -X main.BuiltBy=github-actions" main.go
-
+      - name: Install dependencies
+        run: |
+            go get .
+      
+      - name: Build
+        run: go build -v ./...
