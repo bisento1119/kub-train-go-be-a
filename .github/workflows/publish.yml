@@ -32,9 +32,9 @@ jobs:
     - name: setup Go Lang
       uses: actions/setup-go@v3
       with:
-        go-version: '^1.20.6'
+        go-version: '^1.20.3'
+        # go version
     - run: |
-        go version
         go mod init ${GITHUB_REPOSITORY}
         go mod tidy
         go build -ldflags "-X main.Version=${GITHUB_REF_NAME} -X main.BuiltBy=github-actions" main.go
