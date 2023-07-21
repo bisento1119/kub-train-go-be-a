@@ -1,0 +1,4 @@
+.\make.bat
+
+docker build -t go-be-a .
+docker run -d --publish 4880:4880 --name kube_eval-go-be-a go-be-a
