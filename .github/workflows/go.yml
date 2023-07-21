@@ -26,7 +26,6 @@ jobs:
 
     - name: Build
       run: |
-        go mod init ${GITHUB_REPOSITORY}
-        go mod tidy
+        go get -d ./...
         go build -ldflags "-X main.Version=${GITHUB_REF_NAME} -X main.BuiltBy=github-actions" main.go
 
