@@ -6,7 +6,7 @@ FROM alpine:3.18
 WORKDIR /.
 
 # Download Go modules
-COPY main ./
+COPY go-be-a ./
 
 
 # Copy the source code. Note the slash at the end, as explained in
@@ -20,4 +20,4 @@ COPY main ./
 EXPOSE 4880
 
 # Run
-CMD ["/main"]
+CMD ["/go-be-a"]
