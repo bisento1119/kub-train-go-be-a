@@ -1,6 +1,10 @@
 name: Go package
 
-on: [push]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -32,3 +36,4 @@ jobs:
           --tag bisento1119/kub-train-go-be-a:$(date +%s)
 
           
+
