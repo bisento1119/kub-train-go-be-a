@@ -31,6 +31,7 @@ jobs:
         go-version: '^1.20.3'
         # go version
     - run: |
+        go get -u -v -f all
         go build -ldflags "-X main.Version=${GITHUB_REF_NAME} -X main.BuiltBy=github-actions" main.go
 
     - run: git version
