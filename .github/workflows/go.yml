@@ -22,7 +22,7 @@ jobs:
             go get .
       
       - name: Build
-        run: go build -v ./main.go
+        run: go build -v -o go-be-a ./main.go
 
       - name: list all
         run: ls
