@@ -2,11 +2,13 @@
 
 FROM alpine:3.18
 
-# Set destination for COPY
+
 WORKDIR /.
 
 # Download Go modules
-COPY go-be-a ./
+COPY ./go-be-a ./
+
+# Set destination for COPY
 
 
 # Copy the source code. Note the slash at the end, as explained in
@@ -20,4 +22,4 @@ COPY go-be-a ./
 EXPOSE 4880
 
 # Run
-CMD go-be-a
+CMD ["./go-be-a"]
