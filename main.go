@@ -12,10 +12,10 @@ import (
 
 // Person - Our struct for all persons
 type Person struct {
-	Id         string `json:"Id"`
-	Forename   string `json:"forename"`
-	Lastname   string `json:"lastname"`
-	Occupation string `json:"occupation"`
+	Id           int    `json:"id"`
+	Forename     string `json:"forename"`
+	Lastname     string `json:"lastname"`
+	ProfessionId int    `json:"professionId"`
 }
 
 var Persons []Person
@@ -39,9 +39,9 @@ func handleRequests() {
 
 func main() {
 	Persons = []Person{
-		{Id: "1", Forename: "Bruno", Lastname: "Haferkamp", Occupation: "Striezelmeister"},
-		{Id: "2", Forename: "Claudio", Lastname: "Heysterkamp", Occupation: "Meyster"},
-		{Id: "3", Forename: "Pieter", Lastname: "Koopmans", Occupation: "Fahrer"},
+		{Id: 1, Forename: "Bruno", Lastname: "Haferkamp", ProfessionId: 3},
+		{Id: 2, Forename: "Claudio", Lastname: "Heysterkamp", ProfessionId: 2},
+		{Id: 3, Forename: "Pieter", Lastname: "Koopmans", ProfessionId: 1},
 	}
 	handleRequests()
 }
