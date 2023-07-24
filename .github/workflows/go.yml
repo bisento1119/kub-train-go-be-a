@@ -57,6 +57,7 @@ jobs:
           file: ./Dockerfile
           build-args: PROJECT_VERSION="$PROJECT_VERSION"
           push: true
+          tags: v0.0.1
           labels: ${{ steps.meta.outputs.labels }}
 
 
