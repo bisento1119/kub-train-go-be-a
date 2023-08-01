@@ -46,7 +46,7 @@ func main() {
 		{Id: 2, Forename: "Claudio", Lastname: "Heysterkamp", ProfessionId: 2},
 		{Id: 3, Forename: "Pieter", Lastname: "Koopmans", ProfessionId: 1},
 		{Id: 4, Forename: "Kalle", Lastname: "Krapfen", ProfessionId: 2},
-		{Id: 5, Forename: "Gabriel", Lastname: "Knattermann", ProfessionId: 3},
+		{Id: 5, Forename: "Gabriel", Lastname: "Knattermann", ProfessionId: 4},
 	}
 	handleRequests()
 }
